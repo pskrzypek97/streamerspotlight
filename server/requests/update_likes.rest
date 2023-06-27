@@ -1,0 +1,6 @@
+PUT http://localhost:3001/streamers/649ac25b6f2679ff21a26cdf/vote
+Content-Type: application/json
+
+{
+    "likes": 250
+}
