@@ -1,1 +1,1 @@
-GET http://localhost:3001/streamers/649ac25b6f2679ff21a26cdf
+GET http://localhost:3001/streamer/649ac25b6f2679ff21a26cdf

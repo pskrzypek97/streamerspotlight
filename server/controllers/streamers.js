@@ -7,12 +7,6 @@ streamersRouter.get('/', async (req, res) => {
 	res.json(streamers);
 });
 
-streamersRouter.get('/:id', async (req, res) => {
-	const streamer = await Streamer.findById(req.params.id);
-	if (streamer) res.json(streamer);
-	else res.status(404).end();
-});
-
 streamersRouter.post('/', async (req, res) => {
 	const body = req.body;
 

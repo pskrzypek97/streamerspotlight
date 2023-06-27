@@ -5,6 +5,7 @@ require('express-async-errors');
 const cors = require('cors');
 const morgan = require('morgan');
 const streamersRouter = require('./controllers/streamers');
+const streamerRouter = require('./controllers/streamer');
 const middleware = require('./utils/middleware');
 const mongoose = require('mongoose');
 
@@ -24,6 +25,7 @@ app.use(express.static('build'));
 app.use(express.json());
 
 app.use('/streamers', streamersRouter);
+app.use('/streamer', streamerRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
