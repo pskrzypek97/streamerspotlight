@@ -20,8 +20,6 @@ const RecordPage = () => {
 		fetchData();
 	}, []);
 
-	console.log(record);
-
 	if (!record)
 		return (
 			<>

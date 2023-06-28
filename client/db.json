@@ -1,18 +1,28 @@
 {
-	"streamers": [
-		{
-			"id": "649ac25b6f2679ff21a26cdf",
-			"name": "streamer1",
-			"description": "Streamer1's content focuses on video games",
-			"platform": "Twitch",
-			"image": "https://static-cdn.jtvnw.net/jtv_user_pictures/asmongold-profile_image-f7ddcbd0332f5d28-300x300.png"
-		},
-		{
-			"id": "649ac28f6f2679ff21a26ce1",
-			"name": "streamer2",
-			"description": "Streamer1's content focuses on video games",
-			"platform": "Twitch",
-			"image": "https://static-cdn.jtvnw.net/jtv_user_pictures/asmongold-profile_image-f7ddcbd0332f5d28-300x300.png"
-		}
-	]
+  "streamers": [
+    {
+      "id": "649ac25b6f2679ff21a26cdf",
+      "name": "streamer1",
+      "description": "Streamer1's content focuses on video games",
+      "platform": "Twitch",
+      "image": "https://static-cdn.jtvnw.net/jtv_user_pictures/asmongold-profile_image-f7ddcbd0332f5d28-300x300.png",
+      "likes": 1
+    },
+    {
+      "id": "649ac28f6f2679ff21a26ce1",
+      "name": "streamer2",
+      "description": "Streamer1's content focuses on video games",
+      "platform": "Twitch",
+      "image": "https://static-cdn.jtvnw.net/jtv_user_pictures/asmongold-profile_image-f7ddcbd0332f5d28-300x300.png",
+      "likes": 0
+    },
+    {
+      "name": "streamer4",
+      "platform": "YouTube",
+      "description": "streamer4 interests are RPG and board games",
+      "image": "https://static-cdn.jtvnw.net/jtv_user_pictures/asmongold-profile_image-f7ddcbd0332f5d28-300x300.png",
+      "id": "Qf8yDhJ",
+      "likes": 3
+    }
+  ]
 }
