@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import axios from 'axios';
+import streamersService from '../services/streamers';
 
 const Streamer = (props) => {
 	const [likes, setLikes] = useState(props.likes || 0);
@@ -9,14 +9,10 @@ const Streamer = (props) => {
 	const vote = async (vote) => {
 		setLikes((prevLike) => prevLike + vote);
 
-		console.log('likes after setLikes', likes);
-
-		await axios.put(`http://localhost:3001/streamers/${props.id}`, {
+		await streamersService.updateLikes(props.id, {
 			...props,
 			likes: likes + vote,
 		});
-
-		console.log('likes after put', likes);
 	};
 
 	return (

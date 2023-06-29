@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-import axios from 'axios';
+import streamersService from '../services/streamers';
 
 const RecordPage = () => {
 	const [record, setRecord] = useState(null);
@@ -10,15 +10,15 @@ const RecordPage = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const res = await axios.get(`http://localhost:3001/streamers/${id}`);
-				setRecord(res.data);
+				const res = await streamersService.getOneStreamer(id);
+				setRecord(res);
 			} catch (e) {
 				setRecord(null);
 			}
 		};
 
 		fetchData();
-	}, []);
+	}, [id]);
 
 	if (!record)
 		return (

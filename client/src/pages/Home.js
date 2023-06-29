@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import axios from 'axios';
+import streamersService from '../services/streamers';
 
 import Form from '../components/Form';
 import Streamer from '../components/Streamer';
@@ -11,8 +11,8 @@ const Home = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const res = await axios.get('http://localhost:3001/streamers');
-				setStreamersArray(res.data);
+				const res = await streamersService.getStreamers();
+				setStreamersArray(res);
 			} catch (e) {
 				setStreamersArray([]);
 			}
@@ -21,10 +21,14 @@ const Home = () => {
 		fetchData();
 	}, []);
 
+	const appendStreamersArray = (newStreamer) => {
+		setStreamersArray(streamersArray.concat(newStreamer));
+	};
+
 	return (
 		<>
 			<h2>Streamer Submission Form</h2>
-			<Form />
+			<Form onAppendStreamers={appendStreamersArray} />
 			<h2>Streamer List</h2>
 			{streamersArray.map((streamer) => (
 				<Streamer key={streamer.id} {...streamer} />

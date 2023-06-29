@@ -1,19 +1,16 @@
 import { useForm } from 'react-hook-form';
 
-import axios from 'axios';
+import streamersService from '../services/streamers';
 
-const Form = () => {
+const Form = ({ onAppendStreamers }) => {
 	const { register, handleSubmit } = useForm();
 
 	const platforms = ['Twitch', 'YouTube', 'TikTok', 'Kick', 'Rumble'];
 
 	const onSubmit = async (data) => {
-		const req = await axios.post('http://localhost:3001/streamers', {
-			...data,
-			image:
-				'https://static-cdn.jtvnw.net/jtv_user_pictures/asmongold-profile_image-f7ddcbd0332f5d28-300x300.png',
-		});
-		console.log(req.data);
+		const res = await streamersService.addStreamer(data);
+
+		onAppendStreamers(res);
 	};
 
 	return (
