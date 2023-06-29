@@ -7,15 +7,18 @@ import Streamer from '../components/Streamer';
 
 const Home = () => {
 	const [streamersArray, setStreamersArray] = useState([]);
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		const fetchData = async () => {
+			setLoading(true);
 			try {
 				const res = await streamersService.getStreamers();
 				setStreamersArray(res);
 			} catch (e) {
 				setStreamersArray([]);
 			}
+			setLoading(false);
 		};
 
 		fetchData();
@@ -29,7 +32,8 @@ const Home = () => {
 		<>
 			<h2>Streamer Submission Form</h2>
 			<Form onAppendStreamers={appendStreamersArray} />
-			<h2>Streamer List</h2>
+			{loading && <h2>Loading streamers list</h2>}
+			{!loading && <h2>Streamers List</h2>}
 			{streamersArray.map((streamer) => (
 				<Streamer key={streamer.id} {...streamer} />
 			))}

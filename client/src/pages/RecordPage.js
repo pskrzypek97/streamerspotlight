@@ -5,25 +5,30 @@ import streamersService from '../services/streamers';
 
 const RecordPage = () => {
 	const [record, setRecord] = useState(null);
+	const [loading, setLoading] = useState(false);
 	const { id } = useParams();
 
 	useEffect(() => {
 		const fetchData = async () => {
+			setLoading(true);
 			try {
 				const res = await streamersService.getOneStreamer(id);
 				setRecord(res);
 			} catch (e) {
 				setRecord(null);
 			}
+			setLoading(false);
 		};
 
 		fetchData();
 	}, [id]);
 
+	if (loading) return <h1>Loading...</h1>;
+
 	if (!record)
 		return (
 			<>
-				<h1>Unable to fetch data</h1>
+				<h1>404: Streamer not found</h1>
 				<Link to="/">Back</Link>
 			</>
 		);
