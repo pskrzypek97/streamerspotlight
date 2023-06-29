@@ -2,9 +2,7 @@ POST http://localhost:3001/streamers
 Content-Type: application/json
 
 {
-    "name": 2114,
-    "description": "Streamer4's content focuses on travelling",
+    "description": "pshemek123's content focuses on programming",
     "platform": "Twitch",
-    "image": "https://static-cdn.jtvnw.net/jtv_user_pictures/asmongold-profile_image-f7ddcbd0332f5d28-300x300.png",
-    "likes": 100
+    "image": "https://static-cdn.jtvnw.net/jtv_user_pictures/asmongold-profile_image-f7ddcbd0332f5d28-300x300.png"
 }

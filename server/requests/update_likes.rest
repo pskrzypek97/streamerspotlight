@@ -1,6 +1,6 @@
-PUT http://localhost:3001/streamers/649ac25b6f2679ff21a26cdf/vote
+PUT http://localhost:3001/streamers/649d71f47a60323fab06ef41/vote
 Content-Type: application/json
 
 {
-    "likes": 250
+    "likes": 10
 }
