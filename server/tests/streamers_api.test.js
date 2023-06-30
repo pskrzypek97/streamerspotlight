@@ -16,7 +16,7 @@ describe('when there is initially some streamers saved', () => {
 			.get('/streamers')
 			.expect(200)
 			.expect('Content-Type', /application\/json/);
-	}, 100000);
+	});
 
 	test('all streamers are returned', async () => {
 		const res = await api.get('/streamers');

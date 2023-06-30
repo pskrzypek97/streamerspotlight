@@ -2,6 +2,8 @@ import { useForm } from 'react-hook-form';
 
 import streamersService from '../services/streamers';
 
+import './Form.css';
+
 const Form = ({ onAppendStreamers }) => {
 	const {
 		register,
@@ -18,8 +20,8 @@ const Form = ({ onAppendStreamers }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
-			<div>
+		<form onSubmit={handleSubmit(onSubmit)} className="form">
+			<div className="input">
 				<label htmlFor="name">Name: </label>
 				<input
 					placeholder="name"
@@ -32,9 +34,9 @@ const Form = ({ onAppendStreamers }) => {
 						},
 					})}
 				/>
-				{errors?.name && <span>{errors.name.message}</span>}
+				{errors?.name && <span className="error">{errors.name.message}</span>}
 			</div>
-			<div>
+			<div className="input">
 				<label>Platform: </label>
 				<select name="Platform" {...register('platform', { required: true })}>
 					{platforms.map((platform) => (
@@ -44,17 +46,18 @@ const Form = ({ onAppendStreamers }) => {
 					))}
 				</select>
 			</div>
-			<div style={{ display: 'flex' }}>
+			<div className="input">
 				<label htmlFor="description">Description: </label>
 				<textarea
 					placeholder="description"
 					id="description"
-					style={{ marginLeft: '5px' }}
 					{...register('description', {
 						required: { value: true, message: 'Description is required' },
 					})}
 				/>
-				{errors?.description && <span>{errors.description.message}</span>}
+				{errors?.description && (
+					<span className="error">{errors.description.message}</span>
+				)}
 			</div>
 
 			<button type="submit">Submit</button>

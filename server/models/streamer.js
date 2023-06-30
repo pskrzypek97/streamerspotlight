@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const streamerSchema = new mongoose.Schema({
 	name: {
 		type: String,
+		minLength: 3,
 		required: true,
 	},
 	description: {

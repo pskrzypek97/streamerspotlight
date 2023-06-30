@@ -5,8 +5,10 @@ import streamersService from '../services/streamers';
 import Form from '../components/Form';
 import Streamer from '../components/Streamer';
 
+import './Home.css';
+
 const Home = () => {
-	const [streamersArray, setStreamersArray] = useState([]);
+	const [streamersArray, setStreamersArray] = useState(null);
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
@@ -34,9 +36,12 @@ const Home = () => {
 			<Form onAppendStreamers={appendStreamersArray} />
 			{loading && <h2>Loading streamers list</h2>}
 			{!loading && <h2>Streamers List</h2>}
-			{streamersArray.map((streamer) => (
-				<Streamer key={streamer.id} {...streamer} />
-			))}
+			<div className="streamers">
+				{streamersArray &&
+					streamersArray.map((streamer) => (
+						<Streamer key={streamer.id} {...streamer} />
+					))}
+			</div>
 		</>
 	);
 };

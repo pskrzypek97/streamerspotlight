@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import streamersService from '../services/streamers';
 
+import './Streamer.css';
+
 const Streamer = (props) => {
 	const [likes, setLikes] = useState(props.likes || 0);
 
@@ -16,23 +18,17 @@ const Streamer = (props) => {
 	};
 
 	return (
-		<div>
-			<h3>{props.name}</h3>
-			<p>{props.platform}</p>
-			<div
-				style={{
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'space-between',
-					width: 50,
-					height: 20,
-				}}
-			>
+		<div className="streamer">
+			<h3>Name: {props.name}</h3>
+			<p>Platform: {props.platform}</p>
+
+			<div className="streamer__likes">
+				<p>Vote:</p>
 				<button onClick={() => vote(1)}>+</button>
 				<p>{likes}</p>
 				<button onClick={() => vote(-1)}>-</button>
 			</div>
-			<Link to={`/streamer/${props.id}`}>More info</Link>
+			<Link to={`/streamers/${props.id}`}>More info</Link>
 		</div>
 	);
 };

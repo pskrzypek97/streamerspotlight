@@ -1,0 +1,10 @@
+.streamers {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.streamers > * {
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+	width: 13rem;
+}

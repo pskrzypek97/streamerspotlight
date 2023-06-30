@@ -1,0 +1,21 @@
+.form {
+	width: 15rem;
+}
+
+.input {
+	display: flex;
+	flex-direction: column;
+}
+
+.input:nth-of-type(2) {
+	width: 5rem;
+}
+
+.input:nth-of-type(3) textarea {
+	height: 5rem;
+}
+
+.error {
+	margin-top: 2px;
+	color: red;
+}

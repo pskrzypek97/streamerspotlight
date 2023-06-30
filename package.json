@@ -6,7 +6,8 @@
 	"scripts": {
 		"start": "cross-env NODE_ENV=production node ./server/index.js",
 		"dev": "cross-env NODE_ENV=development nodemon ./server/index.js",
-		"test": "cross-env NODE_ENV=test jest --verbose --runInBand"
+		"test": "cross-env NODE_ENV=test jest --verbose --runInBand",
+		"build:ui": "@powershell Remove-Item -Recurse -Force ./server/build && cd ./client && npm run build && @powershell Copy-Item build -Recurse ../server"
 	},
 	"author": "",
 	"license": "ISC",

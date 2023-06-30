@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 
 import streamersService from '../services/streamers';
 
+import './RecordPage.css';
+
 const RecordPage = () => {
 	const [record, setRecord] = useState(null);
 	const [loading, setLoading] = useState(false);
@@ -34,14 +36,14 @@ const RecordPage = () => {
 		);
 
 	return (
-		<>
+		<div className="record-page">
 			<h1>Streamer Record</h1>
 			<img src={record.image} alt="" />
-			<h2>{record.name}</h2>
-			<h3>{record.platform}</h3>
-			<p>{record.description}</p>
-			<Link to="/">Back</Link>
-		</>
+			<h2>Name: {record.name}</h2>
+			<h3>Platform: {record.platform}</h3>
+			<p>Description: {record.description}</p>
+			<Link to="/">Go back</Link>
+		</div>
 	);
 };
 
