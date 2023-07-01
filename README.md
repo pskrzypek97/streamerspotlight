@@ -44,10 +44,10 @@ run start
 
 ## Endpoints
 
-GET /streamers: returns all streamers
-GET /streamer/:id: returns a particular streamer
-POST /streamers: send new streamers to save them in the database
-PUT /streamers/:id/vote: update particular streamer's likes count
+- GET /streamers: returns all streamers
+- GET /streamer/:id: returns a particular streamer
+- POST /streamers: send new streamers to save them in the database
+- PUT /streamers/:id/vote: update particular streamer's likes count
 
 ## Tech Used
 
